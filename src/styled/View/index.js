@@ -1,18 +1,33 @@
 import styled from 'styled-components';
 
-const size = ({width, height }) => `
+const size = ({ 
+    width,
+    height 
+}) => `
   ${ width ? `width: ${width}` : "" };
   ${ height ? `height: ${height}` : "" };
 `;
 
-const margin = ({margin, marginT, marginB, marginL, marginR }) => `
+const margin = ({
+    margin, 
+    marginT, 
+    marginB, 
+    marginL, 
+    marginR 
+}) => `
   ${ margin ? `margin: ${margin}` : "" };
   ${ marginT ? `margin-top: ${marginT}` : "" };
   ${ marginB ? `margin-bottom: ${marginB}` : "" };
   ${ marginL ? `margin-left: ${marginL}` : "" };
   ${ marginR ? `margin-right: ${marginR}` : "" };
 `;
-const padding = ({ padding, paddingT, paddingB, paddingL, paddingR}) => `
+const padding = ({ 
+    padding, 
+    paddingT, 
+    paddingB, 
+    paddingL, 
+    paddingR
+}) => `
     ${ padding ? `margin: ${padding}` : "" };
     ${ paddingT ? `padding-top: ${paddingT}` : "" };
     ${ paddingB ? `padding-bottom: ${paddingB}` : "" };
@@ -20,7 +35,13 @@ const padding = ({ padding, paddingT, paddingB, paddingL, paddingR}) => `
     ${ paddingR ? `padding-right: ${paddingR}` : "" };
 `;
 
-const positions = ({position, top, right, bottom, left}) => `
+const positions = ({
+    position, 
+    top,
+    right, 
+    bottom, 
+    left
+}) => `
   ${ position ? `position: ${position}` : "" };
   ${ top ? `top: ${top}` : "" };
   ${ right ? `right: ${right}` : "" };
@@ -29,7 +50,15 @@ const positions = ({position, top, right, bottom, left}) => `
 
 `;
 
-const border = ({border, borderT, borderB, borderL, borderR, radius, bColor}) => `
+const border = ({
+    border, 
+    borderT, 
+    borderB, 
+    borderL, 
+    borderR,
+    radius,
+    bColor
+}) => `
   ${ border ? `border: ${border}` : "" };
   ${ borderT ? `border-top: ${borderT}` : "" };
   ${ borderB ? `border-bottom: ${borderB}` : "" };
@@ -39,7 +68,14 @@ const border = ({border, borderT, borderB, borderL, borderR, radius, bColor}) =>
   ${ bColor ? `border-color: ${bColor}` : "" }
 `;
 
-const backgrounds = ({ bgImg, bgPos, bgRep, bgSize, bgColor, bgAt}) => `
+const backgrounds = ({ 
+    bgImg, 
+    bgPos, 
+    bgRep, 
+    bgSize, 
+    bgColor, 
+    bgAt
+}) => `
   ${ bgImg ? `background-image: url(${bgImg})` : "" };
   ${ bgPos ? `background-position: ${bgPos}` : "" };
   ${ bgRep ? `background-repeat: ${bgRep}` : "" };
