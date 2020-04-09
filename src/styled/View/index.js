@@ -28,7 +28,7 @@ const padding = ({
     paddingL, 
     paddingR
 }) => `
-    ${ padding ? `margin: ${padding}` : "" };
+    ${ padding ? `padding: ${padding}` : "" };
     ${ paddingT ? `padding-top: ${paddingT}` : "" };
     ${ paddingB ? `padding-bottom: ${paddingB}` : "" };
     ${ paddingL ? `padding-left: ${paddingL}` : "" };
