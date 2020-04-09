@@ -7,7 +7,6 @@ const size = ({
   ${ width ? `width: ${width}` : "" };
   ${ height ? `height: ${height}` : "" };
 `;
-
 const margin = ({
     margin, 
     marginT, 
@@ -50,31 +49,33 @@ const positions = ({
   ${ left ? `left: ${left}` : "" };
 
 `;
-const font = ({color,fontSize})=>`
+
+const font = ({
+    color,
+    fontSize,
+    fontStyle,
+    fontWeight,
+    textTransform,
+    textDecoration,
+    textAlign
+})=>`
     ${color? `color:${color};` : ''}
     ${fontSize ? `font-size: ${fontSize};` : ''}
-`
-const bg = ({bgColor}) => `
-    ${bgColor? `background-color: ${bgColor};` : ''}
-`
-
-const border = ({border,borderColor}) =>`
-    ${border? `border: ${border};`: ''}
-    ${borderColor? `border-color: ${borderColor};`: ''}
-`
-
+    ${fontStyle ? `font-style: ${fontStyle};` : ''}
+    ${fontWeight ? `font-weight: ${fontWeight};` : ''}
+    ${textTransform ? `text-transform: ${textTransform};` : ''}
+    ${textDecoration ? `text-decoration: ${textDecoration};` : ''}
+    ${textAlign ? `text-align: ${textAlign};` : ''}
+`;
 const styles = props => `
   ${ size(props) }
   ${ margin(props) }
   ${ padding(props) }
   ${ positions(props) }
   ${ font (props)}
-  ${ bg (props)}
-  ${ border(props)}
 `;
 
-const Button = styled.button`
-     ${ styles }
+const Text = styled.span`
+   ${styles}
 `
-
-export default Button;
+export default Text;

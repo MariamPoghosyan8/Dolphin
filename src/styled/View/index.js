@@ -126,7 +126,7 @@ const flex = ({
     ${wrapReverse? 'flex-wrap: wrap-reverse;' : ''}
 ` ;
 
-const setStyles = props => `
+const styles = props => `
   ${ size(props) }
   ${ margin(props) }
   ${ padding(props) }
@@ -137,7 +137,7 @@ const setStyles = props => `
 `;
 
 const View = styled.div `
-  ${ setStyles }
+  ${ styles }
 
 `;
 
