@@ -52,7 +52,7 @@ const positions = ({
 
 const font = ({
     color,
-    fontSize,
+    size,
     fontStyle,
     fontWeight,
     textTransform,
@@ -60,7 +60,7 @@ const font = ({
     textAlign
 })=>`
     ${color? `color:${color};` : ''}
-    ${fontSize ? `font-size: ${fontSize};` : ''}
+    ${size ? `font-size: ${size};` : ''}
     ${fontStyle ? `font-style: ${fontStyle};` : ''}
     ${fontWeight ? `font-weight: ${fontWeight};` : ''}
     ${textTransform ? `text-transform: ${textTransform};` : ''}

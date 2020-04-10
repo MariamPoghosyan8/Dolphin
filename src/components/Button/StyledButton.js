@@ -7,7 +7,6 @@ const size = ({
   ${ width ? `width: ${width}` : "" };
   ${ height ? `height: ${height}` : "" };
 `;
-
 const margin = ({
     margin, 
     marginT, 
@@ -15,11 +14,11 @@ const margin = ({
     marginL, 
     marginR 
 }) => `
-  ${ margin ? `margin: ${margin};` : "" };
-  ${ marginT ? `margin-top: ${marginT};` : "" };
-  ${ marginB ? `margin-bottom: ${marginB};` : "" };
-  ${ marginL ? `margin-left: ${marginL};` : "" };
-  ${ marginR ? `margin-right: ${marginR};` : "" };
+  ${ margin ? `margin: ${margin}` : "" };
+  ${ marginT ? `margin-top: ${marginT}` : "" };
+  ${ marginB ? `margin-bottom: ${marginB}` : "" };
+  ${ marginL ? `margin-left: ${marginL}` : "" };
+  ${ marginR ? `margin-right: ${marginR}` : "" };
 `;
 const padding = ({ 
     padding, 
@@ -28,11 +27,11 @@ const padding = ({
     paddingL, 
     paddingR
 }) => `
-    ${ padding ? `padding: ${padding};` : "" };
-    ${ paddingT ? `padding-top: ${paddingT};` : "" };
-    ${ paddingB ? `padding-bottom: ${paddingB};` : "" };
-    ${ paddingL ? `padding-left: ${paddingL};` : "" };
-    ${ paddingR ? `padding-right: ${paddingR};` : "" };
+    ${ padding ? `padding: ${padding}` : "" };
+    ${ paddingT ? `padding-top: ${paddingT}` : "" };
+    ${ paddingB ? `padding-bottom: ${paddingB}` : "" };
+    ${ paddingL ? `padding-left: ${paddingL}` : "" };
+    ${ paddingR ? `padding-right: ${paddingR}` : "" };
 `;
 
 const positions = ({
@@ -42,48 +41,32 @@ const positions = ({
     bottom, 
     left
 }) => `
-  ${ position ? `position: ${position};` : "" };
-  ${ top ? `top: ${top};` : "" };
-  ${ right ? `right: ${right};` : "" };
-  ${ bottom ? `bottom: ${bottom};` : "" };
-  ${ left ? `left: ${left};` : "" };
+  ${ position ? `position: ${position}` : "" };
+  ${ top ? `top: ${top}` : "" };
+  ${ right ? `right: ${right}` : "" };
+  ${ bottom ? `bottom: ${bottom}` : "" };
+  ${ left ? `left: ${left}` : "" };
 
 `;
+const font = ({
+    size
+}) => `
+    ${size? `font-size: ${size}`: ''}
+`
 
 const border = ({
-    border, 
-    borderT, 
-    borderB, 
-    borderL, 
-    borderR,
-    radius,
-    bColor
+    border,
+    radius
 }) => `
-  ${ border ? `border: ${border};` : "" };
-  ${ borderT ? `border-top: ${borderT}` : "" };
-  ${ borderB ? `border-bottom: ${borderB}` : "" };
-  ${ borderL ? `border-left: ${borderL}` : "" };
-  ${ borderR ? `border-right: ${borderR}` : "" };
-  ${ radius ? `border-radius: ${radius}` : "" };
-  ${ bColor ? `border-color: ${bColor}` : "" }
-`;
+    ${ border ? `border: ${border};` : "" };
+    ${ radius ? `border-radius: ${radius};` : "" };
 
-const backgrounds = ({ 
-    bgImg, 
-    bgPos, 
-    bgRep, 
-    bgSize, 
-    bgColor, 
-    bgAt
-}) => `
-  ${ bgImg ? `background-image: url(${bgImg});` : "" };
-  ${ bgPos ? `background-position: ${bgPos};` : "" };
-  ${ bgRep ? `background-repeat: ${bgRep};` : "" };
-  ${ bgSize ? `background-size: ${bgSize};` : "" };
-  ${ bgColor ? `background-color: ${bgColor};` : "" };
-  ${ bgAt ? `background-attachment: ${bgAt};` : "" };
 `;
-
+const backgrounds  = ({
+    bgColor
+}) =>`
+    ${ bgColor ? `background-color: ${bgColor};` : "" };
+`;
 const flex = ({
     flex,
     jStart,
@@ -134,10 +117,10 @@ const styles = props => `
   ${ backgrounds(props) }
   ${ flex(props) }
   ${ border(props) }
+  ${font (props)}
 `;
 
-const View = styled.div `
-  ${ styles }
-`;
-
-export default View;
+const StyledButton = styled.button`
+    ${ styles }
+`
+export default StyledButton;
