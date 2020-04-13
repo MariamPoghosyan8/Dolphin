@@ -125,7 +125,23 @@ const flex = ({
     ${wrap? 'flex-wrap: wrap;' : ''}
     ${wrapReverse? 'flex-wrap: wrap-reverse;' : ''}
 ` ;
-
+const font = ({
+  color,
+  size,
+  fontStyle,
+  fontWeight,
+  textTransform,
+  textDecoration,
+  textAlign
+})=>`
+  ${color? `color:${color};` : ''}
+  ${size ? `font-size: ${size};` : ''}
+  ${fontStyle ? `font-style: ${fontStyle};` : ''}
+  ${fontWeight ? `font-weight: ${fontWeight};` : ''}
+  ${textTransform ? `text-transform: ${textTransform};` : ''}
+  ${textDecoration ? `text-decoration: ${textDecoration};` : ''}
+  ${textAlign ? `text-align: ${textAlign};` : ''}
+`;
 const styles = props => `
   ${ size(props) }
   ${ margin(props) }
@@ -134,6 +150,7 @@ const styles = props => `
   ${ backgrounds(props) }
   ${ flex(props) }
   ${ border(props) }
+  ${ font(props)}
 `;
 
 const View = styled.div `
